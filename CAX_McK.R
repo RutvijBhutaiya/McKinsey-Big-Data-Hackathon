@@ -72,17 +72,19 @@ boxplot(duration_speed, main = 'Speed in KM/Min', col = 'coral')
 boxplot(distance_driver_origin, main = 'Distance Order Pickup and Driver', col = 'cornflowerblue')
 
 
-## Outliers Remove
+## Outliers Remove with 97% percentile
 
-## For distance_driver_origin
 
-quantile(distance_driver_origin, 0.99)
-
-CAX_McK = CAX_McK[which(distance_driver_origin < 0.02), ] # That means '0' dist removed
+quantile(distance_driver_origin, 0.97)
                           
+quantile(duration_min, 0.97) 
+
+quantile(distance_km, 0.97)
 
 
-
+CAX_McK = CAX_McK[which(distance_driver_origin <= 0.04637 & 
+                    duration_min <= 59.8 &
+                    distance_km <= 55.768), ]
 
 ## Mean After Outlier Adjustment
 
@@ -162,7 +164,6 @@ hist(distance_km, main = 'Distance in KM', col = 'darkolivegreen2')
 hist(duration_min, main = 'Duration in Min', col = 'darkorchid2')
 hist(duration_speed, main = 'Speed in KM/Min', col = 'coral')
 hist(distance_driver_origin, main = 'Distance Order Pickup and Driver', col = 'cornflowerblue')
-
 
 
 
