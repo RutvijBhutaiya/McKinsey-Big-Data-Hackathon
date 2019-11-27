@@ -14,10 +14,16 @@
 
 - [Objective](#objective)
 - [Approach](#approach)
+- [Feature Analysis](#featureanalysis)
+-
+
+<br>
 
 ## Objective 
 
 The objective of this contest is to predict the probability of an offer being accepted by a certain driver.
+
+<br>
 
 ## Approach 
 - Raw data analysis and Feature Analysis
@@ -28,5 +34,13 @@ The objective of this contest is to predict the probability of an offer being ac
 - 
 
 
+<br>
+
+<p align="right"><img width=37.6% src=https://user-images.githubusercontent.com/44467789/69726134-dd36e780-1145-11ea-9941-b84286575ca1.jpg>
+  
+<br>
+
+
+## Feature Analysis
 
 
