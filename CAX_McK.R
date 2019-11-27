@@ -116,9 +116,15 @@ table(as.factor(driver_response), as.factor(weekday_key))
 
 table(as.factor(driver_response), as.factor(hour_key))
 
+## as.matrix(prop.table(table(as.factor(driver_response), as.factor(hour_key))))
+
 table(as.factor(driver_response), as.factor(offer_class_group))
 
+## as.matrix(prop.table(table(as.factor(driver_response), as.factor(offer_class_group))))
+
 table(as.factor(driver_response), as.factor(ride_type_desc))
+
+## as.matrix(prop.table(table(as.factor(driver_response), as.factor(ride_type_desc))))
 
 
 ## Chi-Square / z-test / ANOVA
@@ -160,14 +166,28 @@ CAX_McK = CAX_McK[, -c(1,5)]
 
 ## Histogram
 
+par(mfrow = c(2,2)) 
+
 hist(distance_km, main = 'Distance in KM', col = 'darkolivegreen2')
 hist(duration_min, main = 'Duration in Min', col = 'darkorchid2')
 hist(duration_speed, main = 'Speed in KM/Min', col = 'coral')
 hist(distance_driver_origin, main = 'Distance Order Pickup and Driver', col = 'cornflowerblue')
 
 
+## Boxcox Lambda Test
 
+library(moments)
+library(forecast)
 
+BoxCox.lambda(distance_km)
+
+BoxCox.lambda(duration_min)
+
+BoxCox.lambda(duration_speed)
+
+BoxCox.lambda(distance_driver_origin)
+
+# We decided to not to normalize the variables due to (-1) observation. It cretes NAs. 
 
 
 ## Feature Selection
