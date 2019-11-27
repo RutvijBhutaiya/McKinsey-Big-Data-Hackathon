@@ -20,6 +20,13 @@
 The objective of this contest is to predict the probability of an offer being accepted by a certain driver.
 
 ## Approach 
+- Raw data analysis and Feature Analysis
+- New Feature Creation in MS Excel
+- Multivariate analysis
+- Exploratory Data Analysis 
+- Create Clean Dataset file 
+- 
+
 
 
 
