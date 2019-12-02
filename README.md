@@ -65,3 +65,11 @@ Hence, we created a new feature destination_set with a factor of Yes or No. And 
 
 In conclusion, we will compare both the type of datasets foraccuracy – as mentioned AUC – to check which datasets fit right to predict drivers’response. 
 
+<br>
+
+## Feature Analysis
+
+For Feature analysis we decided to do multivariant analysis in Tableau. Tableau is powerful tool to analysis data in visual forms. As out target feature is driver_responce, our analysis includes particular variables the most. 
+
+#### Unique Driver Code – Driver Response to the Offer
+
