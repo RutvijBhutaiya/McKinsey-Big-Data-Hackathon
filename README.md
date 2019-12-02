@@ -28,10 +28,14 @@ The objective of this contest is to predict the probability of an offer being ac
 ## Approach 
 - Study Dataset Creation 
 - Raw data analysis and Feature Analysis
-- Multivariate analysis
+- Multivariate analysis - Using Tableau
 - Exploratory Data Analysis 
-- Create Clean Dataset file 
-- 
+- Create Clean1 Dataset file 
+- Feature Addition - destination_set
+- Create Clean2 Dataset file
+- Apply Supervised Machine Learning Models on the Dataste
+- Compare Results for diffrent datasets - choose the best fit
+- Conclusion
 
 
 <br>
