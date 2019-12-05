@@ -30,9 +30,6 @@ The objective of this contest is to predict the probability of an offer being ac
 - Raw data analysis and Feature Analysis
 - Multivariate analysis - Using Tableau
 - Exploratory Data Analysis 
-- Create Clean1 Dataset file - CAX_McK_Clean1
-- Feature Addition - destination_set
-- Create Clean2 Dataset file - CAX_McK_Clean2
 - Apply Supervised Machine Learning Models on the Dataste
 - Compare Results for diffrent datasets - choose the best fit
 - Conclusion
