@@ -44,27 +44,14 @@ The objective of this contest is to predict the probability of an offer being ac
 
 ## Study Dataset Creation
 
-In this study, we decided to try 3 different types of Datapreparation and check which dataset fits best for the output (driver response prediction). 
-
-##### Type 1: 
-
-In this type of data preparation, we created new features distance_speedand distance_driver_origin. 
+In this type of data preparation, we created new features distance_speed and distance_driver_origin. 
 
 Where, duration_speed = duration_km / duration_min and 
 distance_driver_origin = Ecludian distance on driver_latitude, driver_longitude,origin_order_latitude, origin_order_longitude. 
 
-We also checked for outliers, missing values and completed ExploratoryData Analysis for the original dataset. The R code is written in -  [CAX_McK_Clean1.R](https://github.com/RutvijBhutaiya/McKinsey-Big-Data-Hackathon/blob/master/CAX_McK_Clean1.R) file. And we store thedata in [ .csv] file. 
+We also checked for outliers, missing values and completed ExploratoryData Analysis for the original dataset. The R code is written in -  [CAX_McK_Clean1.R](https://github.com/RutvijBhutaiya/McKinsey-Big-Data-Hackathon/blob/master/CAX_McK_Clean1.R) file. And we store the data in [CAX_Mck_Train_Clean1.csv] file. 
+
 We build Machine Learning models and evaluated model performance. 
-
-##### Type 2: 
-
-In this type of data preparation, we took the database, which weprepared as CAX_McK_Clean1.csv and created a new feature above that. The R code is written in -  CAX_McK_Clean2.R 
-
-We need to top-up this new feature and want to study, due to(-1) observations from duration_min and distance_km where the destination is notset. These observations give misrepresentations of the data [for example observationat duration_min is showing -1, when a destination is not set]. 
-
-Hence, we created a new feature destination_set with a factor of Yes or No. And filled the featurewith respect to the observation where it was showing (-1) as a destination notset. And after normalization, we created a new dataset asCAX_McK_Clean2.csv to build models and evaluation.  
-
-In conclusion, we will compare both the type of datasets foraccuracy – as mentioned AUC – to check which datasets fit right to predict drivers’response. 
 
 <br>
 
