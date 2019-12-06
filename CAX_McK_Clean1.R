@@ -9,7 +9,7 @@ library(rpivotTable)
 library(ggcorrplot)
 library(corrplot)
 library(RColorBrewer)
-library(Boruta)
+
 library(outliers)
 
 
@@ -60,11 +60,11 @@ str(CAX_McK)
 
 ## Mean Befor Outlier Adjustment
 
-summary(CAX_McK[, c(10,11,12)])
+summary(CAX_McK[, c(10,11,15)])
 
 ## ## Outliers Detection - Continious Vars Box Plot
 
-par(mfrow = c(2,2))
+par(mfrow = c(1,1))
 
 boxplot(distance_km, main = 'Distance in KM', col = 'darkolivegreen2')
 boxplot(duration_min, main = 'Duration in Min', col = 'darkorchid2')
@@ -75,20 +75,34 @@ boxplot(distance_driver_origin, main = 'Distance Order Pickup and Driver', col =
 ## Outliers Remove with 97% percentile
 
 
-quantile(distance_driver_origin, 0.97)
+## Remove -1 outliers 
+
+CAX_McK = CAX_McK[which(duration_min >= 0 & 
+                          distance_km >= 0 &
+                          duration_speed >= 0 &
+                           driver_latitude >= 0.1 &
+                          driver_longitude >= 0.1 &
+                          origin_order_latitude >= 0 &
+                          origin_order_longitude >= 0),]
+
+
+## At 95% quantile - run one more Outlier test
+
+quantile(distance_driver_origin, 0.95)
                           
-quantile(duration_min, 0.97) 
+quantile(duration_min, 0.95) 
 
-quantile(distance_km, 0.97)
+quantile(distance_km, 0.95)
 
 
-CAX_McK = CAX_McK[which(distance_driver_origin <= 0.04637 & 
-                    duration_min <= 59.8 &
-                    distance_km <= 55.768), ]
+
+CAX_McK = CAX_McK[which(distance_driver_origin <= 0.03919 & 
+                    duration_min <= 57.667 &
+                    distance_km <= 53.406), ]
 
 ## Mean After Outlier Adjustment
 
-summary(CAX_McK[, c(10,11,12)])
+summary(CAX_McK[, c(10,11,15)])
 
 
 
@@ -100,10 +114,16 @@ summary(CAX_McK[, c(10,11,12)])
 ## We also decided to not to include, Discrit variables - hour_key, weekday_key
 
 
-ggcorrplot(cor(CAX_McK[, c(10,11,12,15,16)]), method = 'circle',  type = 'lower', lab = TRUE)
+ggcorrplot(cor(CAX_McK[, c(1,4,5,6,7,8,9,10,11,12,15,16)]), method = 'circle',  type = 'lower', lab = TRUE)
 
 corrplot(cor(CAX_McK[, c(10,11,12,15,16)]), type = 'upper', order = 'hclust', 
          col = brewer.pal(n = 7, name = 'YlGnBu'))
+
+## Remove High Correlatated features - Multicollinearity - duration_km and distance_km
+## Alos, Remove, Origin_Order : latitude and longitude (High corr)
+## We decided to keep duration_speed as it is created from km and min variables
+
+CAX_McK = CAX_McK[ -c(10,11,8,9)]
 
 
 ## categorical variables
@@ -112,7 +132,7 @@ corrplot(cor(CAX_McK[, c(10,11,12,15,16)]), type = 'upper', order = 'hclust',
 
 table(as.factor(driver_response), as.factor(weekday_key))
 
-## as.matrix(prop.table(table(as.factor(driver_response), as.factor(weekday_key))))
+as.matrix(prop.table(table(as.factor(driver_response), as.factor(weekday_key))))
 
 table(as.factor(driver_response), as.factor(hour_key))
 
@@ -166,39 +186,35 @@ CAX_McK = CAX_McK[, -c(1,5)]
 
 ## Histogram
 
-par(mfrow = c(2,2)) 
+par(mfrow = c(1,2)) 
 
-hist(distance_km, main = 'Distance in KM', col = 'darkolivegreen2')
-hist(duration_min, main = 'Duration in Min', col = 'darkorchid2')
 hist(duration_speed, main = 'Speed in KM/Min', col = 'coral')
 hist(distance_driver_origin, main = 'Distance Order Pickup and Driver', col = 'cornflowerblue')
-
 
 ## Boxcox Lambda Test
 
 library(moments)
 library(forecast)
 
-BoxCox.lambda(distance_km)
+# duration_speed
 
-BoxCox.lambda(duration_min)
+BoxCox.lambda(CAX_McK$duration_speed)
 
-BoxCox.lambda(duration_speed)
+CAX_McK$duration_speed = sqrt(CAX_McK$duration_speed)
 
-BoxCox.lambda(distance_driver_origin)
+#CAX_McK$duration_speed = log(CAX_McK$duration_speed)
 
-# We decided to not to normalize the variables due to (-1) observation. It cretes NAs. 
 
+# distance_driver_origin
+
+BoxCox.lambda(CAX_McK$distance_driver_origin)
+
+CAX_McK$distance_driver_origin = log(CAX_McK$distance_driver_origin)
+CAX_McK$distance_driver_origin = (CAX_McK$distance_driver_origin)^2
+CAX_McK$distance_driver_origin = 1 / CAX_McK$distance_driver_origin
 
 write.csv(CAX_McK, 'CAX_McK_Train_Clean1.csv')
 
-## Feature Selection
-
-attach(CAX_McK)
-
-set.seed(123)
-
-boruta.train <- Boruta(driver_response ~ . , data=CAX_McK, doTrace = 2)
 
 
 
