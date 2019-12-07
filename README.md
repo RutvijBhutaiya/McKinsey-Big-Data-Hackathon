@@ -72,7 +72,7 @@ This patter is also shown in following maps,
 As we can see in the map, based on the longitude and latitude the data is from the city Moscow, Russia. As we can see in the map, near to Moskva River, drivers getting more offers and accepting offers are also high compare to outskirts of the main city. Observant points, driver ID with 3371, 3665 and 6580 as shown in the map got good count on offer acceptance.
 
 
-p align="center"><img width=85% src=https://user-images.githubusercontent.com/44467789/70368752-e86fdd00-18d4-11ea-9348-157a1dd26b09.png>
+<p align="center"><img width=85% src=https://user-images.githubusercontent.com/44467789/70368752-e86fdd00-18d4-11ea-9348-157a1dd26b09.png>
 
 Hence, we can say that in the centre of the city drivers are able to get more acceptance due to short distance. 
 
@@ -80,7 +80,24 @@ As, we can see in the following chart Red market cluster are in the drivers in t
 
 <p align="center"><img width=85% src=https://user-images.githubusercontent.com/44467789/70368787-16edb800-18d5-11ea-8a5f-62c17e77da3c.png>
 
+This, normally happens in the city, where in the centre of the city due to short distance, drivers get available earlier and hence are also available to accept the next nearest ride. 
 
+<br>
+
+#### Day of Week - % Response (Accept) by Drivers with respect to Total Counts for the Day
+
+Here, 0 – is Sunday and ascending weekdays 6 is Saturday. 
+As we can see in the flowing bar chart Driver’s acceptance ratio is lower on Sunday and Friday, which is 70% and 71.1% out of all offers receiver by the drivers on the particular weekday. 
+
+<p align="center"><img width=85% src=https://user-images.githubusercontent.com/44467789/70368808-7ea40300-18d5-11ea-932c-52a17a010ccc.png>
+  
+However, the best acceptance rate we can see is for Wednesday. And Thursday. 
+
+Low acceptance ratios on Monday, Friday and Saturday, also means the availability of the drivers? Dose these days we observe overcrowd of passengers? However, we can’ totally deny that drivers were sitting ideal and not accepting the offers on Monday or Saturday. However, for Sunday the case could be different as it is a only week holiday. 
+
+<br>
+
+## Hour of Week - % Response (Accept) by Drivers with respect to Total Counts for an Hour
 
 
 
