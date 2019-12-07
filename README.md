@@ -89,7 +89,7 @@ This, normally happens in the city, where in the centre of the city due to short
 Here, 0 – is Sunday and ascending weekdays 6 is Saturday. 
 As we can see in the flowing bar chart Driver’s acceptance ratio is lower on Sunday and Friday, which is 70% and 71.1% out of all offers receiver by the drivers on the particular weekday. 
 
-<p align="center"><img width=85% src=https://user-images.githubusercontent.com/44467789/70368808-7ea40300-18d5-11ea-932c-52a17a010ccc.png>
+<p align="center"><img width=75% src=https://user-images.githubusercontent.com/44467789/70368808-7ea40300-18d5-11ea-932c-52a17a010ccc.png>
   
 However, the best acceptance rate we can see is for Wednesday. And Thursday. 
 
@@ -97,7 +97,20 @@ Low acceptance ratios on Monday, Friday and Saturday, also means the availabilit
 
 <br>
 
-## Hour of Week - % Response (Accept) by Drivers with respect to Total Counts for an Hour
+#### Hour of Week - % Response (Accept) by Drivers with respect to Total Counts for an Hour
 
+Similarly, as we observer the bar chat for a week, we have also observer patterns for an hour. 
 
+As sown in the following bar chart, Hight of the bar lines are the total counts response of the drivers and Green share indicated that acceptance rate of the driver. 
 
+<p align="center"><img width=75% src=https://user-images.githubusercontent.com/44467789/70368831-d6426e80-18d5-11ea-8c6b-0cdbd50d81a7.png>
+  
+Hence, as we can see in the bar chart driver’s acceptance rate is high from 8 am in morning till 3 pm in the afternoon. 
+
+However, the offer count is highest between evening 7 pm to 9-9.30 pm I at night. But mat be due to again availability of the drivers, more than 25% of the offers are not accepted. 
+
+This is the time frame, where company need to work to turn bars into the green shade. 
+
+<br>
+
+#### Offer Class – With Respect Avg. Distance and Driver Response (Accept) To Overall size of the Offer Class
