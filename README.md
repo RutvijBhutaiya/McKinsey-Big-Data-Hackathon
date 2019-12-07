@@ -103,7 +103,7 @@ Similarly, as we observer the bar chat for a week, we have also observer pattern
 
 As sown in the following bar chart, Hight of the bar lines are the total counts response of the drivers and Green share indicated that acceptance rate of the driver. 
 
-<p align="center"><img width=85% src=https://user-images.githubusercontent.com/44467789/70368831-d6426e80-18d5-11ea-8c6b-0cdbd50d81a7.png>
+<p align="center"><img width=95% src=https://user-images.githubusercontent.com/44467789/70368831-d6426e80-18d5-11ea-8c6b-0cdbd50d81a7.png>
   
 Hence, as we can see in the bar chart driver’s acceptance rate is high from 8 am in morning till 3 pm in the afternoon. 
 
@@ -117,12 +117,41 @@ This is the time frame, where company need to work to turn bars into the green s
 
 As we can see in the following bar chart, passengers prefer to book XL category car for long distance, and hence the average distance for the class group XL is the maximum, with around 20 km. 
 
-<p align="center"><img width=85% src=https://user-images.githubusercontent.com/44467789/70368866-42bd6d80-18d6-11ea-9d98-a3876e4eee6c.png>
+<p align="center"><img width=97% src=https://user-images.githubusercontent.com/44467789/70368866-42bd6d80-18d6-11ea-9d98-a3876e4eee6c.png>
   
 We have also observed that, driver’s response for accepting the ride is high for VIP+ and VIP category. However, distance in km are less for VIP+ class, mainly due to premium charges. 
 
 On the other side, Economy and Standard class category group of drivers are one of the least groups for accepting the offer from the passengers with respect to both the class shares highest market share on Pie chart. Again, this might be mainly because of high rush in particular class groups due to low fairs and hence, drivers are not available to accept the incoming offer. 
 
 #### Avg. Speed During Week based on Hour Key
+
+Speed is a feature we created based on the distance and duration time. In the following multivariant analysis we took average speed during the hour and checked which day in a week has low and high traffic. We assumed low speed means high traffic. 
+
+<p align="center"><img width=85% src=https://user-images.githubusercontent.com/44467789/70368880-857f4580-18d6-11ea-9eaf-f9f070119665.png>
+  
+Based on the chart, in the earlier hours of the day avg. speed is above average and as business hours begins speed decreases below average line. However, for the Sunday as we can see – mentioned in Orange colour – speed is above average. That indicates, due to less traffic cabs are able to achieve above avg. speed on Sunday.  
+
+We can also see few outliers in the graph, from midnight to early morning hours. 
+
+<br>
+
+#### Driver Response – With Respect to Avg. Distance and Avg. Speed on Particular Day 
+
+Based on the Avg. Speed During Week based on Hour Key analysis, we can nor relate the driver’s response based on the traffic. 
+
+<p align="center"><img width=85% src=https://user-images.githubusercontent.com/44467789/70368897-b95a6b00-18d6-11ea-970d-dc8c56148f61.png>
+  
+Here, 0 means Driver not accepted the offer and 1 means – Driver accepted the offer. Driver’s are not accepting offers when the Avg. distance in km is high, and Avg. Speed is low. 
+
+Also, in the bar graph we can observe that for the Monday, offers from the passengers are above average but drivers acceptance rate is lower than the average. And for the Saturday, it’s reversed. 
+
+#### % Of Driver Response (Accept) – With Respect to Offer Class Category on Given Week day
+
+Based on the following Pie chart Standard and Economy class groups share the biggest market share, which can easily understand from the number of offers gets to these two class – as shown in in Bar charts also. 
+
+<p align="center"><img width=85% src=https://user-images.githubusercontent.com/44467789/70368918-0cccb900-18d7-11ea-8d92-db4aa26dbbd2.png>
+
+Based on the Red and Greed divergence – we can identify that Economy class drivers are accepting less offers on all the weekdays. And for Standard class we can see that the ratio of accepting is less only on Sunday (may be due to less drivers and a holiday). 
+
 
 
