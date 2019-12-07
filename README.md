@@ -103,7 +103,7 @@ Similarly, as we observer the bar chat for a week, we have also observer pattern
 
 As sown in the following bar chart, Hight of the bar lines are the total counts response of the drivers and Green share indicated that acceptance rate of the driver. 
 
-<p align="center"><img width=75% src=https://user-images.githubusercontent.com/44467789/70368831-d6426e80-18d5-11ea-8c6b-0cdbd50d81a7.png>
+<p align="center"><img width=85% src=https://user-images.githubusercontent.com/44467789/70368831-d6426e80-18d5-11ea-8c6b-0cdbd50d81a7.png>
   
 Hence, as we can see in the bar chart driver’s acceptance rate is high from 8 am in morning till 3 pm in the afternoon. 
 
@@ -114,3 +114,15 @@ This is the time frame, where company need to work to turn bars into the green s
 <br>
 
 #### Offer Class – With Respect Avg. Distance and Driver Response (Accept) To Overall size of the Offer Class
+
+As we can see in the following bar chart, passengers prefer to book XL category car for long distance, and hence the average distance for the class group XL is the maximum, with around 20 km. 
+
+<p align="center"><img width=85% src=https://user-images.githubusercontent.com/44467789/70368866-42bd6d80-18d6-11ea-9d98-a3876e4eee6c.png>
+  
+We have also observed that, driver’s response for accepting the ride is high for VIP+ and VIP category. However, distance in km are less for VIP+ class, mainly due to premium charges. 
+
+On the other side, Economy and Standard class category group of drivers are one of the least groups for accepting the offer from the passengers with respect to both the class shares highest market share on Pie chart. Again, this might be mainly because of high rush in particular class groups due to low fairs and hence, drivers are not available to accept the incoming offer. 
+
+#### Avg. Speed During Week based on Hour Key
+
+
