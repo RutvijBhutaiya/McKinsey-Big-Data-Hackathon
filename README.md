@@ -127,7 +127,7 @@ On the other side, Economy and Standard class category group of drivers are one 
 
 Speed is a feature we created based on the distance and duration time. In the following multivariant analysis we took average speed during the hour and checked which day in a week has low and high traffic. We assumed low speed means high traffic. 
 
-<p align="center"><img width=85% src=https://user-images.githubusercontent.com/44467789/70368880-857f4580-18d6-11ea-9eaf-f9f070119665.png>
+<p align="center"><img width=95% src=https://user-images.githubusercontent.com/44467789/70368880-857f4580-18d6-11ea-9eaf-f9f070119665.png>
   
 Based on the chart, in the earlier hours of the day avg. speed is above average and as business hours begins speed decreases below average line. However, for the Sunday as we can see – mentioned in Orange colour – speed is above average. That indicates, due to less traffic cabs are able to achieve above avg. speed on Sunday.  
 
@@ -149,7 +149,7 @@ Also, in the bar graph we can observe that for the Monday, offers from the passe
 
 Based on the following Pie chart Standard and Economy class groups share the biggest market share, which can easily understand from the number of offers gets to these two class – as shown in in Bar charts also. 
 
-<p align="center"><img width=85% src=https://user-images.githubusercontent.com/44467789/70368918-0cccb900-18d7-11ea-8d92-db4aa26dbbd2.png>
+<p align="center"><img width=97% src=https://user-images.githubusercontent.com/44467789/70368918-0cccb900-18d7-11ea-8d92-db4aa26dbbd2.png>
 
 Based on the Red and Greed divergence – we can identify that Economy class drivers are accepting less offers on all the weekdays. And for Standard class we can see that the ratio of accepting is less only on Sunday (may be due to less drivers and a holiday). 
 
