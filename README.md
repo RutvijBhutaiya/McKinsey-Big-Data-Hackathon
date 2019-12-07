@@ -61,3 +61,10 @@ For Feature analysis we decided to do multivariant analysis in Tableau. Tableau 
 
 #### Unique Driver Code – Driver Response to the Offer
 
+<p align="center"><img width=70% src=https://user-images.githubusercontent.com/44467789/70368722-82835580-18d4-11ea-904e-85d851ef88b1.png>
+  
+In the above-mentioned chart as we can see 1421 driver code got the maximum offers, however, driver accepted offer is only 90. Similarly, 3371 driver code, got around 500 offers, but driver accepted offer was 382. Hence, this driver did maximum business by accepting the offers. 
+
+This patter is also shown in following maps,
+
+<p align="center"><img width=70% src=https://user-images.githubusercontent.com/44467789/70368727-a2b31480-18d4-11ea-9d7c-3ab659679aea.png>
