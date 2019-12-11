@@ -174,5 +174,19 @@ colSums(is.na(CAX_McK))
 
 attach(CAX_McK)
 ```
+For Target variable : driver_respove we also checked the balance between class 0 and 1. 
 
+```
 
+## Driver Respond Ratio
+
+as.matrix(prop.table(table(driver_response)))
+
+# [,1]
+# 0 0.2597694
+# 1 0.7402306
+```
+For ourliers detection, under uni-variant alaysis
+
+``
+## Uni-variant Analysis
