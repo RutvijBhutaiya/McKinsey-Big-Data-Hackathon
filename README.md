@@ -159,3 +159,20 @@ Based on the Red and Greed divergence – we can identify that Economy class dri
 
 ## Exploratory Data Analysis
 
+For EDA we started with missing value identification and feature summary.
+
+```
+## Data Summary
+
+dim(CAX_McK)
+
+summary(CAX_McK)
+
+str(CAX_McK)
+
+colSums(is.na(CAX_McK))
+
+attach(CAX_McK)
+```
+
+
