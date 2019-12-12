@@ -186,6 +186,9 @@ as.matrix(prop.table(table(driver_response)))
 # 0 0.2597694
 # 1 0.7402306
 ```
+
+#### Outliers Study
+
 For ourliers detection, under uni-variant alaysis
 
 ```
@@ -267,6 +270,9 @@ CAX_McK = CAX_McK[which(distance_driver_origin <= 0.03919 &
 
 <p align="center"><img width=85% src=https://user-images.githubusercontent.com/44467789/70695774-6fafbd00-1ce8-11ea-8cea-8c075ddb48cc.png>
   
+
+#### Correlation Study
+
 For Bi-variant analysis we did correlation study between features. 
 
 Continious Variables - correlation analysis 
@@ -281,6 +287,8 @@ corrplot(cor(CAX_McK[, c(6,7,8,9,10,11,12,15,16)]), type = 'upper', order = 'hcl
 <p align="center"><img width=78% src=https://user-images.githubusercontent.com/44467789/70696681-295b5d80-1cea-11ea-9a8f-87eaec089c9c.png>
  
 Remove High Correlatated features - Multicollinearity - duration_km and distance_km. Also, Remove, Origin_Order : latitude and longitude (High corr). We decided to keep duration_speed as it is created from km and min variables.
+
+## Feature Significant Study
 
 To remove non-significant variables in continious/numbers features, we used correlation. But, to identify non-significant variables in categorical features we used chi square test. However, we also performed t-test for continious variables. 
 
@@ -317,5 +325,5 @@ t.test(duration_speed, driver_response) ## SIGNIFICANT
 
 An hence, we removed non-significant feature from the dataset. 
  
-                       
+#### Normalization Study
 
