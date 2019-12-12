@@ -282,7 +282,40 @@ corrplot(cor(CAX_McK[, c(6,7,8,9,10,11,12,15,16)]), type = 'upper', order = 'hcl
  
 Remove High Correlatated features - Multicollinearity - duration_km and distance_km. Also, Remove, Origin_Order : latitude and longitude (High corr). We decided to keep duration_speed as it is created from km and min variables.
 
+To remove non-significant variables in continious/numbers features, we used correlation. But, to identify non-significant variables in categorical features we used chi square test. However, we also performed t-test for continious variables. 
+
+To check the significant impact on target variable we put threashold of 95%. 
+
+```
+## For Categorical Variables
+
+chisq.test(as.factor(offer_gk), as.factor(driver_response)) ## NOT SIGNIFICANT : p-value: 0.499
+
+chisq.test(as.factor(weekday_key), as.factor(driver_response)) ## SIGNIFICANT
+
+chisq.test(as.factor(hour_key), as.factor(driver_response)) ## SIGNIFICANT
+
+chisq.test(as.factor(driver_gk), as.factor(driver_response)) ## SIGNIFICANT
+
+chisq.test(as.factor(order_gk), as.factor(driver_response)) ## NOT SIGNIFICANT : p-value: 1
+
+chisq.test(as.factor(offer_class_group), as.factor(driver_response)) ## SIGNIFICANT
+
+chisq.test(as.factor(ride_type_desc), as.factor(driver_response)) ## SIGNIFICANT
 
 
+## For Continious Variables
+
+t.test(distance_km, driver_response) ## SIGNIFICANT
+
+t.test(distance_driver_origin, driver_response) ## SIGNIFICANT
+
+t.test(duration_min, driver_response) ## SIGNIFICANT
+
+t.test(duration_speed, driver_response) ## SIGNIFICANT
+```
+
+An hence, we removed non-significant feature from the dataset. 
+ 
                        
 
