@@ -277,11 +277,12 @@ We also decided to not to include, Discrit variables - hour_key, weekday_key as 
 corrplot(cor(CAX_McK[, c(6,7,8,9,10,11,12,15,16)]), type = 'upper', order = 'hclust', 
          col = brewer.pal(n = 7, name = 'YlGnBu'))
 ```
-<p align="center"><img width=https://user-images.githubusercontent.com/44467789/70696681-295b5d80-1cea-11ea-9a8f-87eaec089c9c.png>
+
+<p align="center"><img width=78% src=https://user-images.githubusercontent.com/44467789/70696681-295b5d80-1cea-11ea-9a8f-87eaec089c9c.png>
  
-Remove High Correlatated features - Multicollinearity - duration_km and distance_km
-Alos, Remove, Origin_Order : latitude and longitude (High corr)
-We decided to keep duration_speed as it is created from km and min variables
+Remove High Correlatated features - Multicollinearity - duration_km and distance_km. Also, Remove, Origin_Order : latitude and longitude (High corr). We decided to keep duration_speed as it is created from km and min variables.
+
+
 
                        
 
