@@ -188,5 +188,80 @@ as.matrix(prop.table(table(driver_response)))
 ```
 For ourliers detection, under uni-variant alaysis
 
-``
+```
 ## Uni-variant Analysis
+
+> summary(CAX_McK[, c(10,11,15)])
+
+  distance_km        duration_min     distance_driver_origin
+ Min.   :  -1.000   Min.   :  -1.00   Min.   : 0.00000      
+ 1st Qu.:  -1.000   1st Qu.:  -1.00   1st Qu.: 0.00562      
+ Median :   6.923   Median :  15.38   Median : 0.01053      
+ Mean   :  13.474   Mean   :  18.93   Mean   : 0.24131      
+ 3rd Qu.:  18.199   3rd Qu.:  28.93   3rd Qu.: 0.01924      
+ Max.   :9137.747   Max.   :6752.48   Max.   :69.39688  
+ 
+ 
+par(mfrow = c(2,2))
+
+boxplot(distance_km, main = 'Distance in KM', col = 'darkolivegreen2')
+boxplot(duration_min, main = 'Duration in Min', col = 'darkorchid2')
+boxplot(duration_speed, main = 'Speed in KM/Min', col = 'coral')
+boxplot(distance_driver_origin, main = 'Distance Order Pickup and Driver', col = 'cornflowerblue')
+```
+
+<p align="center"><img width=85% src=https://user-images.githubusercontent.com/44467789/70690031-c2cf4300-1cdb-11ea-96d4-c860d3d1a838.png>
+
+As we can see the outliers in the box plot for particular features, we decided to remove the outlires. Also, we decided to remove -1 observations when destination is not set. This gives skewness the dataset. 
+
+```
+## Outliers Remove with 97% percentile
+
+## Remove -1 outliers 
+
+CAX_McK = CAX_McK[which(duration_min >= 0 & 
+                          distance_km >= 0 &
+                          duration_speed >= 0 &
+                           driver_latitude >= 0.1 &
+                          driver_longitude >= 0.1 &
+                          origin_order_latitude >= 0 &
+                          origin_order_longitude >= 0),]
+
+```
+And hence, decided to check the quantiles, 
+```
+## At 95% quantile - run one more Outlier test
+
+> quantile(distance_driver_origin, 0.95)
+       95% 
+0.03919821 
+> quantile(duration_min, 0.95) 
+   95% 
+57.667 
+> quantile(distance_km, 0.95)
+   95% 
+53.406 
+
+CAX_McK = CAX_McK[which(distance_driver_origin <= 0.03919 & 
+                    duration_min <= 57.667 &
+                    distance_km <= 53.406), ]
+                    
+ ```
+ 
+ After removing the outlires - summary and box plot. 
+ 
+ ```
+> ## Mean After Outlier Adjustment
+
+> summary(CAX_McK[, c(10,11,15)])
+
+  distance_km        duration_min     distance_driver_origin
+ Min.   :   0.000   Min.   :   0.00   Min.   :0.000000      
+ 1st Qu.:   5.839   1st Qu.:  13.73   1st Qu.:0.005707      
+ Median :  12.315   Median :  22.32   Median :0.010686      
+ Mean   :  19.230   Mean   :  26.86   Mean   :0.014267      
+ 3rd Qu.:  24.326   3rd Qu.:  34.82   3rd Qu.:0.019280      
+ Max.   :9137.747   Max.   :6752.48   Max.   :0.388024    
+ ```
+
+<p align="center"><img width=85% src=
