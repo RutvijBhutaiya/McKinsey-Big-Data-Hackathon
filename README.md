@@ -266,4 +266,10 @@ CAX_McK = CAX_McK[which(distance_driver_origin <= 0.03919 &
 
 <p align="center"><img width=85% src=https://user-images.githubusercontent.com/44467789/70695774-6fafbd00-1ce8-11ea-8cea-8c075ddb48cc.png>
   
+For Bi-variant analyssis we did correlation study between features. 
+
+Continious Variables - correlation analysis 
+We decised to not to incluse, order_gk, driver_gk, offer_gk due to unique ids
+We also decided to not to include, Discrit variables - hour_key, weekday_key as represents categorical variables.
+
 
