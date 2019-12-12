@@ -255,21 +255,33 @@ CAX_McK = CAX_McK[which(distance_driver_origin <= 0.03919 &
 
 > summary(CAX_McK[, c(10,11,15)])
 
-  distance_km        duration_min     distance_driver_origin
- Min.   :   0.000   Min.   :   0.00   Min.   :0.000000      
- 1st Qu.:   5.839   1st Qu.:  13.73   1st Qu.:0.005707      
- Median :  12.315   Median :  22.32   Median :0.010686      
- Mean   :  19.230   Mean   :  26.86   Mean   :0.014267      
- 3rd Qu.:  24.326   3rd Qu.:  34.82   3rd Qu.:0.019280      
- Max.   :9137.747   Max.   :6752.48   Max.   :0.388024    
+ distance_km      duration_min   distance_driver_origin
+ Min.   : 0.000   Min.   : 0.00   Min.   :0.000000      
+ 1st Qu.: 5.504   1st Qu.:13.22   1st Qu.:0.005593      
+ Median :11.266   Median :21.13   Median :0.010292      
+ Mean   :14.976   Mean   :23.35   Mean   :0.012424      
+ 3rd Qu.:20.903   3rd Qu.:31.80   3rd Qu.:0.017664      
+ Max.   :53.406   Max.   :57.67   Max.   :0.039189 
+ 
  ```
 
 <p align="center"><img width=85% src=https://user-images.githubusercontent.com/44467789/70695774-6fafbd00-1ce8-11ea-8cea-8c075ddb48cc.png>
   
-For Bi-variant analyssis we did correlation study between features. 
+For Bi-variant analysis we did correlation study between features. 
 
 Continious Variables - correlation analysis 
 We decised to not to incluse, order_gk, driver_gk, offer_gk due to unique ids
 We also decided to not to include, Discrit variables - hour_key, weekday_key as represents categorical variables.
 
+```
+corrplot(cor(CAX_McK[, c(6,7,8,9,10,11,12,15,16)]), type = 'upper', order = 'hclust', 
+         col = brewer.pal(n = 7, name = 'YlGnBu'))
+```
+<p align="center"><img width=https://user-images.githubusercontent.com/44467789/70696681-295b5d80-1cea-11ea-9a8f-87eaec089c9c.png>
+ 
+Remove High Correlatated features - Multicollinearity - duration_km and distance_km
+Alos, Remove, Origin_Order : latitude and longitude (High corr)
+We decided to keep duration_speed as it is created from km and min variables
+
+                       
 
