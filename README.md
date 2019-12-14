@@ -489,6 +489,16 @@ Prediction      0      1
        'Positive' Class : 0   
 ```
 
+As we can see the accuracy of the model to predict correct - driver accept the offer (class 1) or not (class 0) is 76%. 
+
+Sensitivity means : True positive rate 73%: cases correctly identified as driver would not accept the offer.
+Specificity meand : True Negative rate 76%: cases correctly identified as driver would accept the offer.
+
+Now, Type 1 erroe : 1 - Specificity = 24% 
+and Type 2 erroe : 1 - Sensitivity = 27%
+
+Type 1 error means, actually driver accepted the offer, but our model shows driver denied the offer. And type 2 erroe means
+
 In the following graph, we have shown two ROC (Receiver Operating Characteristic Curve) and AUC are 0.6464 and 0.5413
 
 <p align="center"><img width=78% src=https://user-images.githubusercontent.com/44467789/70843707-22a12780-1e5d-11ea-9d3c-1b94da71570d.png>
