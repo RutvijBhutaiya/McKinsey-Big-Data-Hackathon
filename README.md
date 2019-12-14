@@ -288,7 +288,7 @@ corrplot(cor(CAX_McK[, c(6,7,8,9,10,11,12,15,16)]), type = 'upper', order = 'hcl
  
 Remove High Correlatated features - Multicollinearity - duration_km and distance_km. Also, Remove, Origin_Order : latitude and longitude (High corr). We decided to keep duration_speed as it is created from km and min variables.
 
-## Feature Significant Study
+#### Feature Significant Study
 
 To remove non-significant variables in continious/numbers features, we used correlation. But, to identify non-significant variables in categorical features we used chi square test. However, we also performed t-test for continious variables. 
 
@@ -326,4 +326,36 @@ t.test(duration_speed, driver_response) ## SIGNIFICANT
 An hence, we removed non-significant feature from the dataset. 
  
 #### Normalization Study
+
+For Normalization of variables, we ploted the histogram and data distribution.
+
+<p align="center"><img width=78% src=https://user-images.githubusercontent.com/44467789/70843330-6d6b7100-1e56-11ea-8749-6c42e31e3b84.png>
+  
+As we can see on the plot Speed variable has slight skewness and Distance Order variable is positive skewed distribution. 
+
+For normalization, we used boxcox.lambda test on both the variables, with the use of forecast library. 
+
+```
+## Boxcox Lambda Test
+
+library(moments)
+library(forecast)
+
+# duration_speed
+
+BoxCox.lambda(CAX_McK$duration_speed)
+
+CAX_McK$duration_speed = sqrt(CAX_McK$duration_speed)
+
+# distance_driver_origin
+
+BoxCox.lambda(CAX_McK$distance_driver_origin)
+
+CAX_McK$distance_driver_origin = log(CAX_McK$distance_driver_origin)
+CAX_McK$distance_driver_origin = (CAX_McK$distance_driver_origin)^2
+CAX_McK$distance_driver_origin = 1 / CAX_McK$distance_driver_origin
+```
+
+After normalization, we stored the resultes in new file - CAX_McK_Train_Clean1.csv for supervised model building. 
+
 
