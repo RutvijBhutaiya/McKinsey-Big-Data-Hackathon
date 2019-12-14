@@ -17,7 +17,7 @@
 - [Study Dataset Creation](#study-dataset-creation)
 - [Feature Analysis](#feature-analysis)
 - [Exploratory Data Analysis](#exploratory-data-analysis)
--
+- [Supervised Model Building](#supervised-model-building)
 
 <br>
 
@@ -357,5 +357,48 @@ CAX_McK$distance_driver_origin = 1 / CAX_McK$distance_driver_origin
 ```
 
 After normalization, we stored the resultes in new file - CAX_McK_Train_Clean1.csv for supervised model building. 
+
+<br>
+
+## Supervised Model Building
+
+Before model building we converted converted offer_class_group and ride_type_desc factors into dummy variables. 
+
+Due to the size of the datse set we decided to build Logistic Regression model for class prediction and probability to predict whether particular driver accepts the offer or not. 
+
+We also tried building Random FOrest, and K-nearest neighbour models, but due to size of the data, system took too much time for model completion. Hence, we build model using logit technique. 
+
+```
+## Convert FActors into Dummy vars
+
+offer_class = model.matrix( ~ offer_class_group - 1, data = CAX)
+CAX = data.frame(CAX, offer_class)
+
+ride_type = model.matrix( ~ ride_type_desc - 1, data = CAX)
+CAX = data.frame(CAX, ride_type)
+```
+To validate the logistic regression model we created two sets from the originl datset one, for traning and second for validation. 
+
+In validation dataset we created sub-dataset where we removed target variable driver_responce to predict the variables and to validate with the actual results. 
+
+Here, development datset is train1, and validation is test22. 
+
+```
+# Make Ratio of 30% and 70% for test and train dataset 
+
+
+ind = sample(2, nrow(CAX), replace = TRUE, prob = c(0.7,0.3))
+
+train1 = CAX[ind == 1,]
+test1 = CAX[ind == 2,]
+
+test22 = test1[, -c(8)]  ## Remove Targer Var for Test
+```
+
+#### Logistic Regression
+
+
+
+
 
 
