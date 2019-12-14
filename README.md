@@ -397,7 +397,102 @@ test22 = test1[, -c(8)]  ## Remove Targer Var for Test
 
 #### Logistic Regression
 
+We trained logit model for all the features. And then based on the significant importance, we removed few variables from the model to improve accuracy.
 
+```
+## Build Logit Model
+
+CAX_logit = glm(train1$driver_response ~ . , data = train1, family = binomial())
+
+summary(CAX_logit)
+
+train1 = train1[, -c(1,3,7,12,14,15,16,17,18,19,20)]
+```
+
+Summary of the model,
+
+```
+> summary(CAX_logit)
+
+Call:
+glm(formula = train1$driver_response ~ ., family = binomial(), 
+    data = train1)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-3.0278  -1.0333   0.6420   0.7844   1.5852  
+
+Coefficients:
+                            Estimate Std. Error z value Pr(>|z|)    
+(Intercept)               65.8515313  2.7365527  24.064  < 2e-16 ***
+hour_key                   0.0018727  0.0005738   3.264   0.0011 ** 
+driver_latitude           -1.9185328  0.0383713 -49.999  < 2e-16 ***
+driver_longitude           1.1886665  0.0310260  38.312  < 2e-16 ***
+duration_speed            -2.7140158  0.0280469 -96.767  < 2e-16 ***
+offer_class_groupDelivery -0.3466691  0.0382926  -9.053  < 2e-16 ***
+offer_class_groupEconomy  -0.5951427  0.0226766 -26.245  < 2e-16 ***
+offer_class_groupKids      0.3604382  0.0543878   6.627 3.42e-11 ***
+offer_class_groupStandard -0.1903428  0.0231063  -8.238  < 2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 453283  on 399423  degrees of freedom
+Residual deviance: 429901  on 399415  degrees of freedom
+AIC: 429919
+
+Number of Fisher Scoring iterations: 4
+```
+
+##### Performance Measurement
+
+For model performance we used confusion matrix and AUC (Area Under Curve)
+
+```
+## Prediction Test
+
+test22$predict = predict.glm(CAX_logit, test22, type = 'response')
+
+test22$predict_class = round(test22$predict)
+
+confusionMatrix(as.factor(test1$driver_response), as.factor(test22$predict_class))
+```
+Here, we created two prediction, 1. test22$predict for probability (continious) and 2. test22$predict_class for class (1 and 0). 
+
+```
+Confusion Matrix and Statistics
+
+          Reference
+Prediction      0      1
+         0   4114  39525
+         1   1478 125832
+                                          
+               Accuracy : 0.7601          
+                 95% CI : (0.7581, 0.7622)
+    No Information Rate : 0.9673          
+    P-Value [Acc > NIR] : 1               
+                                          
+                  Kappa : 0.1159          
+                                          
+ Mcnemar's Test P-Value : <2e-16          
+                                          
+            Sensitivity : 0.73569         
+            Specificity : 0.76097         
+         Pos Pred Value : 0.09427         
+         Neg Pred Value : 0.98839         
+             Prevalence : 0.03271         
+         Detection Rate : 0.02407         
+   Detection Prevalence : 0.25527         
+      Balanced Accuracy : 0.74833         
+                                          
+       'Positive' Class : 0   
+```
+
+In the following graph, we have shown two ROC (Receiver Operating Characteristic Curve) and AUC are 0.6464 and 0.5413
+
+<p align="center"><img width=78% src=https://user-images.githubusercontent.com/44467789/70843707-22a12780-1e5d-11ea-9d3c-1b94da71570d.png>
+  
 
 
 
