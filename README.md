@@ -329,7 +329,7 @@ An hence, we removed non-significant feature from the dataset.
 
 For Normalization of variables, we ploted the histogram and data distribution.
 
-<p align="center"><img width=78% src=https://user-images.githubusercontent.com/44467789/70843330-6d6b7100-1e56-11ea-8749-6c42e31e3b84.png>
+<p align="center"><img width=82% src=https://user-images.githubusercontent.com/44467789/70843330-6d6b7100-1e56-11ea-8749-6c42e31e3b84.png>
   
 As we can see on the plot Speed variable has slight skewness and Distance Order variable is positive skewed distribution. 
 
@@ -499,11 +499,9 @@ and Type 2 erroe : 1 - Sensitivity = 27%
 
 Type 1 error means, actually driver accepted the offer, but our model shows driver denied the offer. And type 2 error means driver denied the offer, but our model predicts drived accepted the ride. NOw, from our perspective Type 2 error should be as small as possible for cab ride company. Because, if model predicts drivers acepts the offer and actually there is ndriver to accept the offer / or driver denied the ride offer, means loses of revenue for the cab ride company. 
 
-In this model, PPV (Positive Predict Value) is 9% : PPV means 
-
 In the following graph, we have shown two ROC (Receiver Operating Characteristic Curve) and AUC are 0.6464 and 0.5413
 
-<p align="center"><img width=78% src=https://user-images.githubusercontent.com/44467789/70843707-22a12780-1e5d-11ea-9d3c-1b94da71570d.png>
+<p align="center"><img width=85% src=https://user-images.githubusercontent.com/44467789/70843707-22a12780-1e5d-11ea-9d3c-1b94da71570d.png>
   
 
 
