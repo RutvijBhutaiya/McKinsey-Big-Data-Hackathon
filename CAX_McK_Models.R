@@ -22,6 +22,10 @@ CAX = CAX[, -c(1,8,9)]
 attach(CAX)
 
 
+
+
+
+
 # Make Ratio of 30% and 70% for test and train dataset 
 
 
@@ -33,6 +37,27 @@ test1 = CAX[ind == 2,]
 test22 = test1[, -c(8)]  ## Remove Targer Var for Test
 
 ## MOdel Building
+
+
+## Linear Regresson 
+
+#model2 = lm(driver_response ~  weekday_key + hour_key + duration_speed + driver_latitude + driver_longitude
+ #           + offer_class_groupDelivery + offer_class_groupEconomy + offer_class_groupKids + offer_class_groupPremium + offer_class_groupStandard +
+  #            ride_type_descbusiness)
+
+
+#qq = predict(model2, test22)
+#qq = round(qq)
+
+#backtest = data.frame(test1$driver_response, qq)
+
+#plot(test1$driver_response)
+
+#confusionMatrix(as.factor(test1$driver_response), as.factor(qq))
+
+#roc(test1$driver_response, qq, plot = TRUE, main = 'ROC Curve', col = 'darkseagreen')
+
+
 
 ## Build Logit Model
 
@@ -50,11 +75,10 @@ test22$predict = predict.glm(CAX_logit, test22, type = 'response')
 test22$predict_class = round(test22$predict)
 
 
-## Perfirmance Measurement
-
+## Performance Measurement
 
 confusionMatrix(as.factor(test1$driver_response), as.factor(test22$predict_class))
 
-roc(test1$driver_response, test22$predict, plot = TRUE, main = 'ROC Curve', col = 'darkseagreen')
+roc(test1$driver_response, test22$predict_class, plot = TRUE, main = 'ROC Curve test22$predict_class', col = 'darkseagreen')
 
 
