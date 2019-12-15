@@ -54,6 +54,8 @@ We also checked for outliers, missing values and completed ExploratoryData Analy
 
 We build Machine Learning models and evaluated model performance. 
 
+#### NOTE: Due to large size of the dataset, we are not able to upload it on Github repository. 
+
 <br>
 
 ## Feature Analysis
