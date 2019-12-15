@@ -18,6 +18,7 @@
 - [Feature Analysis](#feature-analysis)
 - [Exploratory Data Analysis](#exploratory-data-analysis)
 - [Supervised Model Building](#supervised-model-building)
+- [Learnings](#learnings)
 - [Acknowledgement](#acknowledgement)
 
 <br>
@@ -504,6 +505,18 @@ In the following graph, we have shown two ROC (Receiver Operating Characteristic
 
 <p align="center"><img width=85% src=https://user-images.githubusercontent.com/44467789/70843707-22a12780-1e5d-11ea-9d3c-1b94da71570d.png>
   
+<br>
+
+## Learnings 
+
+- For Feature Analysis we used Tableau tool.
+- Studied around 1 million observations, and hence, we were forced to used Logistic Regression - due to system limitation.
+- Planning to build one more model Light GBM.
+- Initially, we try to built Random Forest and Knn models on the dataset, but due to system process limitation, need to drop the idea. 
+- Knn we tried with initial k = 5 and hence, it's out of question that model analysis over half a million cases 5 times and build Knn. 
+- Due to okay accuarcy, we got slight poor AUC. Need to correct!
+
+<br>  
 
 ## Acknowledgement 
 
