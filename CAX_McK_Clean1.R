@@ -64,7 +64,7 @@ summary(CAX_McK[, c(10,11,15)])
 
 ## ## Outliers Detection - Continious Vars Box Plot
 
-par(mfrow = c(1,1))
+par(mfrow = c(2,2))
 
 boxplot(distance_km, main = 'Distance in KM', col = 'darkolivegreen2')
 boxplot(duration_min, main = 'Duration in Min', col = 'darkorchid2')
@@ -85,6 +85,7 @@ CAX_McK = CAX_McK[which(duration_min >= 0 &
                           origin_order_latitude >= 0 &
                           origin_order_longitude >= 0),]
 
+attach(CAX_McK)
 
 ## At 95% quantile - run one more Outlier test
 
@@ -114,9 +115,9 @@ summary(CAX_McK[, c(10,11,15)])
 ## We also decided to not to include, Discrit variables - hour_key, weekday_key
 
 
-ggcorrplot(cor(CAX_McK[, c(1,4,5,6,7,8,9,10,11,12,15,16)]), method = 'circle',  type = 'lower', lab = TRUE)
+ggcorrplot(cor(CAX_McK[, c(6,7,8,9,10,11,12,15,16)]), method = 'circle',  type = 'lower', lab = TRUE)
 
-corrplot(cor(CAX_McK[, c(10,11,12,15,16)]), type = 'upper', order = 'hclust', 
+corrplot(cor(CAX_McK[, c(6,7,8,9,10,11,12,15,16)]), type = 'upper', order = 'hclust', 
          col = brewer.pal(n = 7, name = 'YlGnBu'))
 
 ## Remove High Correlatated features - Multicollinearity - duration_km and distance_km
