@@ -34,9 +34,7 @@ The objective of this contest is to predict the probability of an offer being ac
 - Multivariate analysis - Using Tableau
 - Exploratory Data Analysis - Data Cleaning 
 - Apply Supervised Machine Learning Models on the Dataste
-- Compare Results for diffrent datasets - choose the best fit
-- Conclusion
-
+- Performance Measurement - Confusionmatrix and AUC
 
 <br>
 
