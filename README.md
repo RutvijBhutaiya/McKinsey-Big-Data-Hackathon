@@ -514,6 +514,7 @@ In the following graph, we have shown two ROC (Receiver Operating Characteristic
 - Planning to build one more model Light GBM.
 - Initially, we try to built Random Forest and Knn models on the dataset, but due to system process limitation, need to drop the idea. 
 - Knn we tried with initial k = 5 and hence, it's out of question that model analysis over half a million cases 5 times and build Knn. 
+- In case, if regression (Logistic) is not used. May be we woudl not remove highly correlated predictor variables. (Need to check). Becauses, multicollinerity adds sensitivity to minor changes in the model. 
 - Due to okay accuarcy, we got slight poor AUC. Need to correct!
 
 <br>  
