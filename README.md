@@ -496,10 +496,14 @@ As we can see the accuracy of the model to predict correct - driver accept the o
 - Sensitivity means : True positive rate 73%: cases correctly identified as driver would not accept the offer.
 - Specificity meand : True Negative rate 76%: cases correctly identified as driver would accept the offer.
 
+In this case if we calculate Precison and Recall it would be, 0.10 and 0.73 respectively. Bur, please note, this will give us for drivers not accepting ride. NOw, if I reverce the situtaion, then for deivers accepting the offer would be changes.
+
+In that particulat carse my Precision would be 0.989 and Recall would be 0.76. Hence, we can say that 98% times we got correct predicting driver accepted the offer and got accepted, and 76% we got correct predicting that driver accepts the offer. 
+
 - Type 1 erroe : 1 - Specificity = 24% 
 - Type 2 erroe : 1 - Sensitivity = 27%
 
-Type 1 error means, actually driver accepted the offer, but our model shows driver denied the offer. And type 2 error means driver denied the offer, but our model predicts drived accepted the ride. NOw, from our perspective Type 2 error should be as small as possible for cab ride company. Because, if model predicts drivers acepts the offer and actually there is ndriver to accept the offer / or driver denied the ride offer, means loses of revenue for the cab ride company. 
+Type 1 error means, actually driver accepted the offer, but our model shows driver denied the offer. And type 2 error means driver denied the offer, but our model predicts drived accepted the ride. NOw, from our perspective Type 2 error should be as small as possible for cab ride company. Because, if model predicts drivers acepts the offer and actually there is ndriver to accept the offer / or driver denied the ride offer, means loses of revenue for the cab ride company.
 
 In the following graph, we have shown two ROC (Receiver Operating Characteristic Curve) and AUC are 0.6464 and 0.5413
 
