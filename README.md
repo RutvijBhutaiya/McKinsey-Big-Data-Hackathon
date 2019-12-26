@@ -447,6 +447,8 @@ AIC: 429919
 Number of Fisher Scoring iterations: 4
 ```
 
+## EDIT >>*
+
 ##### Performance Measurement
 
 For model performance we used confusion matrix and AUC (Area Under Curve)
