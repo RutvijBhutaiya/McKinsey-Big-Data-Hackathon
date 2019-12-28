@@ -18,6 +18,7 @@
 - [Feature Analysis](#feature-analysis)
 - [Exploratory Data Analysis](#exploratory-data-analysis)
 - [Supervised Model Building](#supervised-model-building)
+- [XGBoost Model Results](#xgboost-model-results)
 - [Learnings](#learnings)
 - [Acknowledgement](#acknowledgement)
 
@@ -447,8 +448,6 @@ AIC: 429919
 Number of Fisher Scoring iterations: 4
 ```
 
-## EDIT >>*
-
 ##### Performance Measurement
 
 For model performance we used confusion matrix and AUC (Area Under Curve)
@@ -517,7 +516,11 @@ In the following graph, we have shown two ROC (Receiver Operating Characteristic
   
 <br>
 
+## XGBoost Model Results
 
+After the Logistic Regression, we build XG Boost model. Here we have presented direct results from the model. 
+
+[XGBoost model code](https://github.com/RutvijBhutaiya/McKinsey-Big-Data-Hackathon/blob/master/XGBOOST.R)
 
 ## Learnings 
 
