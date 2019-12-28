@@ -19,6 +19,7 @@
 - [Exploratory Data Analysis](#exploratory-data-analysis)
 - [Supervised Model Building](#supervised-model-building)
 - [XGBoost Model Results](#xgboost-model-results)
+- [Model Comparision Chart](#model-comparision-chart)
 - [Learnings](#learnings)
 - [Acknowledgement](#acknowledgement)
 
