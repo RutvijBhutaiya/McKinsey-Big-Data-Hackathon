@@ -517,6 +517,8 @@ In the following graph, we have shown two ROC (Receiver Operating Characteristic
   
 <br>
 
+<br>
+
 ## XGBoost Model Results
 
 After the Logistic Regression, we build XG Boost model. Here we have presented direct results from the model. 
@@ -571,7 +573,9 @@ It's not only limited to accurcy, but on AUC also we improved with 0.814. Follow
   
 ## Model Comparison Chart
 
-<p align="center"><img width=85% src=https://user-images.githubusercontent.com/44467789/71541285-945c9380-297c-11ea-99b2-df217927af48.png>
+<p align="center"><img width=67% src=https://user-images.githubusercontent.com/44467789/71541285-945c9380-297c-11ea-99b2-df217927af48.png>
+  
+ <br>
 
 ## Learnings 
 
