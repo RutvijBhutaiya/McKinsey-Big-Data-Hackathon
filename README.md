@@ -460,7 +460,7 @@ test22$predict = predict.glm(CAX_logit, test22, type = 'response')
 
 test22$predict_class = round(test22$predict)
 
-confusionMatrix(as.factor(test1$driver_response), as.factor(test22$predict_class))
+confusionMatrix(as.factor(test22$predict_class), as.factor(test1$driver_response))
 ```
 Here, we created two prediction, 1. test22$predict for probability (continious) and 2. test22$predict_class for class (1 and 0). 
 
@@ -469,49 +469,55 @@ Confusion Matrix and Statistics
 
           Reference
 Prediction      0      1
-         0   4114  39525
-         1   1478 125832
+         0   4125   1481
+         1  39200 126241
                                           
-               Accuracy : 0.7601          
-                 95% CI : (0.7581, 0.7622)
-    No Information Rate : 0.9673          
-    P-Value [Acc > NIR] : 1               
+               Accuracy : 0.7622          
+                 95% CI : (0.7601, 0.7642)
+    No Information Rate : 0.7467          
+    P-Value [Acc > NIR] : < 2.2e-16       
                                           
-                  Kappa : 0.1159          
+                  Kappa : 0.1174          
                                           
- Mcnemar's Test P-Value : <2e-16          
+ Mcnemar's Test P-Value : < 2.2e-16       
                                           
-            Sensitivity : 0.73569         
-            Specificity : 0.76097         
-         Pos Pred Value : 0.09427         
-         Neg Pred Value : 0.98839         
-             Prevalence : 0.03271         
-         Detection Rate : 0.02407         
-   Detection Prevalence : 0.25527         
-      Balanced Accuracy : 0.74833         
+            Sensitivity : 0.09521         
+            Specificity : 0.98840         
+         Pos Pred Value : 0.73582         
+         Neg Pred Value : 0.76306         
+             Prevalence : 0.25329         
+         Detection Rate : 0.02412         
+   Detection Prevalence : 0.03277         
+      Balanced Accuracy : 0.54181         
                                           
-       'Positive' Class : 0   
+       'Positive' Class : 0               
+                            
 ```
 
-As we can see the accuracy of the model to predict correct - driver accept the offer (class 1) or not (class 0) is 76%. 
+As we can see the accuracy of the model to predict correct - driver accept the offer (class 1) or not (class 0) is 76.2%. 
 
-- Sensitivity means : True positive rate 73%: cases correctly identified as driver would not accept the offer.
-- Specificity meand : True Negative rate 76%: cases correctly identified as driver would accept the offer.
+- Sensitivity means : True positive rate 9.5%: cases correctly identified as driver would not accept the offer.
+- Specificity meand : True Negative rate 98.8%: cases correctly identified as driver would accept the offer.
 
-In this case if we calculate Precison and Recall it would be, 0.10 and 0.73 respectively. Bur, please note, this will give us for drivers not accepting ride. NOw, if I reverce the situtaion, then for deivers accepting the offer would be changes.
+In this case if we calculate Precison and Recall it would be, 0.735 and 0.095 respectively. Bur, please note, this will give us for drivers not accepting ride. NOw, if I reverce the situtaion, then for drivers accepting the offer would be changed.
 
-In that particulat carse my Precision would be 0.989 and Recall would be 0.76. Hence, we can say that 98% times we got correct predicting driver accepted the offer and got accepted, and 76% we got correct predicting that driver accepts the offer. 
+In that particulat case (driver accept the offer) my Precision would be 0.763 and Recall would be 0.988. Hence, we can say that 76.3% times we got correct predicting driver accepted the offer and got accepted, and 98.8% we got correct predicting that driver accepts the offer. 
 
-- Type 1 erroe : 1 - Specificity = 24% 
-- Type 2 erroe : 1 - Sensitivity = 27%
+- False Positive Rate (FPR): 1 - Specificity = 1.2% 
+- False Negative Rate (FNR): 1 - Sensitivity = 90.4%
 
-Type 1 error means, actually driver accepted the offer, but our model shows driver denied the offer. And type 2 error means driver denied the offer, but our model predicts drived accepted the ride. NOw, from our perspective Type 2 error should be as small as possible for cab ride company. Because, if model predicts drivers acepts the offer and actually there is ndriver to accept the offer / or driver denied the ride offer, means loses of revenue for the cab ride company.
+False positive rate means, actually driver accepted the offer, but our model shows driver denied the offer. And FAlse negative rate means driver denied the offer, but our model predicts drived accepted the ride. 
 
-In the following graph, we have shown two ROC (Receiver Operating Characteristic Curve) and AUC are 0.6464 and 0.5413
+Now, from our perspective FRR should be as small as possible for cab ride company. Because, if model predicts drivers acepts the offer and actually there is no driver to accept the offer / or driver denied the ride offer, means loses of revenue for the cab ride company.
+However, on the otherside cab ride company migh be in big misconception, that driver woudl accept the offer, but actually driver denied the offer. And this might lead to mismanagement for company while matching cab demands according to areas.  
 
-<p align="center"><img width=85% src=https://user-images.githubusercontent.com/44467789/70843707-22a12780-1e5d-11ea-9d3c-1b94da71570d.png>
+In the following graph, we have shown two ROC (Receiver Operating Characteristic Curve) and AUC are 0.7494. 
+
+<p align="center"><img width=85% src=https://user-images.githubusercontent.com/44467789/71539558-f52ba200-2963-11ea-91fb-f74a56a008da.png>
   
 <br>
+
+
 
 ## Learnings 
 
