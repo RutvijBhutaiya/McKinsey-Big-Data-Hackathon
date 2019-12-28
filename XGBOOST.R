@@ -58,10 +58,10 @@ watchlist = list(train = train1_matrix, test = test1_matrix)
 bst_model = xgb.train(params = xgb_par, data = train1_matrix, 
                       nrounds = 500,
                       watchlist = watchlist,
-                      eta = 0.001)
-                      #max.depth = 3,
-                      #gamma = 0,
-                      #subsample = 1,
+                      eta = 0.10,
+                      max.depth = 6,
+                      gamma = 0.1)
+                      #subsample = 0.7)
                       #colsample_bytree =1,
                       #seed = 333)
 
@@ -92,7 +92,7 @@ p = predict(bst_model, newdata = test1_matrix)
 pred = matrix(p, nrow = nc, ncol = length(p)/nc) %>%   # <-- Here, we have twice of length on 'p'
   t() %>%
   data.frame() %>%
-  mutate(lable = test1_lable, max_prob = max.col(. , 'last')-1) # <-- Bcps in our case 0 mean not accepte and 1 mean accepted 
+  mutate(lable = test1_lable, max_prob = max.col(. , 'last')-1) # <-- (-1) gives result in 0 and 1 instead of 1
   
 head(pred)
 
