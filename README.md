@@ -19,7 +19,7 @@
 - [Exploratory Data Analysis](#exploratory-data-analysis)
 - [Supervised Model Building](#supervised-model-building)
 - [XGBoost Model Results](#xgboost-model-results)
-- [Model Comparision Chart](#model-comparision-chart)
+- [Model Comparison Chart](#model-comparison-chart)
 - [Learnings](#learnings)
 - [Acknowledgement](#acknowledgement)
 
@@ -569,9 +569,9 @@ It's not only limited to accurcy, but on AUC also we improved with 0.814. Follow
   
 <br>
   
-## Model Comparision Chart
+## Model Comparison Chart
 
-
+<p align="center"><img width=85% src=https://user-images.githubusercontent.com/44467789/71541285-945c9380-297c-11ea-99b2-df217927af48.png>
 
 ## Learnings 
 
@@ -582,6 +582,7 @@ It's not only limited to accurcy, but on AUC also we improved with 0.814. Follow
 - Knn we tried with initial k = 5 and hence, it's out of question that model analysis over half a million cases 5 times and build Knn. 
 - In case, if regression (Logistic) is not used. May be we woudl not remove highly correlated predictor variables. (Need to check). Becauses, multicollinerity adds sensitivity to minor changes in the model. 
 - Due to okay accuarcy, we got slight poor AUC. Need to correct!
+- For correctiuon, performed XGBOOST - and improved overall results on the same dataset. 
 
 <br>  
 
