@@ -522,6 +522,56 @@ After the Logistic Regression, we build XG Boost model. Here we have presented d
 
 [XGBoost model code](https://github.com/RutvijBhutaiya/McKinsey-Big-Data-Hackathon/blob/master/XGBOOST.R)
 
+For 500 iteration we plot, mlogloss rate for train in blue dots and test in red line.  
+
+<p align="center"><img width=85% src=https://user-images.githubusercontent.com/44467789/71540887-a9362880-2976-11ea-85d3-a17f687b7efa.png>
+  
+#### Performance Measurement
+
+For XGBOOST model we performed confusion martix an ROC curve. 
+
+```
+Confusion Matrix and Statistics
+
+          Reference
+Prediction      0      1
+         0  15470   3568
+         1  28109 124139
+                                          
+               Accuracy : 0.8151          
+                 95% CI : (0.8132, 0.8169)
+    No Information Rate : 0.7456          
+    P-Value [Acc > NIR] : < 2.2e-16       
+                                          
+                  Kappa : 0.4015          
+                                          
+ Mcnemar's Test P-Value : < 2.2e-16       
+                                          
+            Sensitivity : 0.35499         
+            Specificity : 0.97206         
+         Pos Pred Value : 0.81259         
+         Neg Pred Value : 0.81537         
+             Prevalence : 0.25442         
+         Detection Rate : 0.09032         
+   Detection Prevalence : 0.11115         
+      Balanced Accuracy : 0.66352         
+                                          
+       'Positive' Class : 0       
+ ```
+Here as we can see, model accuracy is higher than Logistic regression model. ALso, our focus is on drivers accepting  the  ride offer, in that case we have specificity at 97%. 
+ 
+Over all model performed better on the sae dataset compared to logistic regression model. 
+ 
+It's not only limited to accurcy, but on AUC also we improved with 0.814. Followinf is the ROC curve, 
+
+<p align="center"><img width=85% src=https://user-images.githubusercontent.com/44467789/71540963-ca4b4900-2977-11ea-8bea-5c06f343af7c.png>
+  
+<br>
+  
+## Model Comparision Chart
+
+
+
 ## Learnings 
 
 - For Feature Analysis we used Tableau tool.
