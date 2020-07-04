@@ -593,3 +593,10 @@ It's not only limited to accurcy, but on AUC also we improved with 0.814. Follow
 ## Acknowledgement 
 
 Crowd AnalytiX (CAX) - [McKinsey Big Data Hackathon](https://www.crowdanalytix.com/contests/mckinsey-big-data-hackathon)
+
+<br>
+
+#### Follow me on LinkedIn 
+
+<a href="https://www.linkedin.com/in/rutvij-bhutaiya/" target="_blank"><img src="https://user-images.githubusercontent.com/44467789/86506896-56d83780-bdf1-11ea-8037-0a51d7fde705.png" align="left" height="70" width="75" ></a>
+
