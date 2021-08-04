@@ -496,7 +496,7 @@ Prediction      0      1
 
 As we can see the accuracy of the model to predict correct - driver accept the offer (class 1) or not (class 0) is 76.2%. 
 
-- Sensitivity means : True positive rate 9.5%: cases correctly identified as driver would not accept the offer.
+- Sensitivity means : True positive rate 9.5%: cases correctly identified as driver would not accept the offer. [Need to be higher, we wnat to know more about specific driver that is not accepting the rides]
 - Specificity meand : True Negative rate 98.8%: cases correctly identified as driver would accept the offer.
 
 In this case if we calculate Precison and Recall it would be, 0.735 and 0.095 respectively. Bur, please note, this will give us for drivers not accepting ride. NOw, if I reverce the situtaion, then for drivers accepting the offer would be changed.
@@ -506,9 +506,9 @@ In that particulat case (driver accept the offer) my Precision would be 0.763 an
 - False Positive Rate (FPR): 1 - Specificity = 1.2% 
 - False Negative Rate (FNR): 1 - Sensitivity = 90.4%
 
-False positive rate means, actually driver accepted the offer, but our model shows driver denied the offer. And FAlse negative rate means driver denied the offer, but our model predicts drived accepted the ride. 
+False positive rate means, actually driver accepted the offer, but our model shows driver denied the offer. And FAlse negative rate means driver denied the offer, but our model predicts drived accepted the ride. [Needs to be small!]
 
-Now, from our perspective FRR should be as small as possible for cab ride company. Because, if model predicts drivers acepts the offer and actually there is no driver to accept the offer / or driver denied the ride offer, means loses of revenue for the cab ride company.
+Now, from our perspective FNR should be as small as possible for cab ride company. Because, if model predicts drivers acepts the offer and actually there is no driver to accept the offer / or driver denied the ride offer, means loses of revenue for the cab ride company.
 However, on the otherside cab ride company migh be in big misconception, that driver woudl accept the offer, but actually driver denied the offer. And this might lead to mismanagement for company while matching cab demands according to areas.  
 
 In the following graph, we have shown two ROC (Receiver Operating Characteristic Curve) and AUC are 0.7494. 
